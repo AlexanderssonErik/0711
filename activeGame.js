@@ -10,6 +10,7 @@ let games = {
   math: 8,
   tangram2D: 9,
   freeBuild: 10
+
 }
 
 
@@ -20,6 +21,10 @@ let activeGame = {
   gameIndex: -1,
   ignoreWin: false,
   timeOutOkClick: 0,
+  wrongCount: 0,
+  okCount: 0, 
+  totalCount: 0,
+  rightCount: 0,
   timeOutOkClickFunction : function(){
       clearTimeout(this.timeOutOkClick);
       this.clickOk(); 
@@ -182,6 +187,7 @@ let activeGame = {
   },
   win:  function(timeout){
     if(!this.ignoreWin){
+      sound.win();
       animateWinning.start(activeGame.level[activeGame.gameIndex].win(),  algoBlock.findMaxY(world.block), true);
       guiGame.okButton.initCallBack(this.clickOk, buttonTrigger.up);
       guiGame.okButton.show();
@@ -194,6 +200,11 @@ let activeGame = {
       }
     }
   },
+  fail: function(){
+    sound.fail();
+
+  },
+
   clickOk: function(){   
     clearTimeout(activeGame.timeOutOkClick);
     activeGame.ignoreWin = false;
@@ -202,8 +213,29 @@ let activeGame = {
     //if(activeGame.gameIndex == games.guidedBuild){
       activeGame.level[activeGame.gameIndex].new();
     //}
-  }
+  },
 
+  progression: function(wrongCount, okCount, totalCount)
+  {
+
+    if(this.wrongCount < wrongCount){
+     // console.log("okCount: " + okCount);
+     // console.log("totalCount: " + totalCount);
+      sound.wrong(okCount/totalCount);
+
+    }else if(this.okCount < okCount){
+    //  console.log("okCount: " + okCount);
+     // console.log("totalCount: " + totalCount);
+      sound.correct(okCount/totalCount);
+    }
+
+    this.wrongCount = wrongCount;
+    this.okCount = okCount;
+    this.totalCount = totalCount;
+
+  },
+
+ 
 
 
 };

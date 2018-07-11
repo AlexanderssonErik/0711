@@ -105,7 +105,12 @@ let tangramFree = {
             algoProjection.setColor(levelAndGameSideZDiffAndIntersect[1], globalWorldColor.red, true, false , false);
             if(tangramFreeLevel.projectAllSides()){
             algoProjection.setColor(levelAndGameSideXDiffAndIntersect[1], globalWorldColor.red, true, false , false);
+            activeGame.progression(levelAndGameSideZDiffAndIntersect[1].length + levelAndGameSideXDiffAndIntersect[1].length, levelAndGameSideZDiffAndIntersect[2].length + levelAndGameSideXDiffAndIntersect[2].length  ,tangramFreeLevel.sideZPlane.length + tangramFreeLevel.sideXPlane.length  )
+
+            }else{
+                activeGame.progression(levelAndGameSideZDiffAndIntersect[1].length , levelAndGameSideZDiffAndIntersect[2].length   ,tangramFreeLevel.sideZPlane.length   )
             }
+
              if(levelAndGameSideZDiffAndIntersect[0].length == 0 && (!tangramFreeLevel.projectAllSides() || levelAndGameSideXDiffAndIntersect[0].length == 0)  && 
                 levelAndGameSideZDiffAndIntersect[1].length == 0 && (!tangramFreeLevel.projectAllSides() ||  levelAndGameSideXDiffAndIntersect[1].length == 0)){
                 if(this.winningDampenerCount < 8){

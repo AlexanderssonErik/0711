@@ -111,7 +111,8 @@ let tangram = {
             algoProjection.setColor(diffAndIntsTmp[1][0], globalWorldColor.red, true, true );    
             algoProjection.setColor(diffAndIntsTmp[0][0], globalWorldColor.red, true, true );       
            algoProjection.setColor(diffAndIntsTmp[2][0], globalWorldColor.red, true, true );
-
+           
+           activeGame.progression(diffAndIntsTmp[1][0].length + diffAndIntsTmp[0][0].length + diffAndIntsTmp[2][0].length, diffAndIntsTmp[1][2].length + diffAndIntsTmp[0][2].length + diffAndIntsTmp[2][2].length ,tangramLevel.projectionPixels[0].length + tangramLevel.projectionPixels[1].length + tangramLevel.projectionPixels[2].length )
 
         }else{
 
@@ -122,9 +123,15 @@ let tangram = {
             }
 
             algoProjection.setColor(diffAndInts[1][0], globalWorldColor.red, true, true );   
+            
             if(tangramLevel.projectAllSides()){
                 algoProjection.setColor(diffAndInts[0][0], globalWorldColor.red, true, true );       
-                algoProjection.setColor(diffAndInts[2][0], globalWorldColor.red, true, true );
+                algoProjection.setColor(diffAndInts[2][0], globalWorldColor.red, true, true );                
+                activeGame.progression(diffAndInts[1][0].length + diffAndInts[0][0].length + diffAndInts[2][0].length, diffAndInts[1][2].length + diffAndInts[0][2].length + diffAndInts[2][2].length ,tangramLevel.projectionPixels[0].length + tangramLevel.projectionPixels[1].length + tangramLevel.projectionPixels[2].length )
+
+            }else{                
+                activeGame.progression(diffAndInts[1][0].length , diffAndInts[1][2].length , tangramLevel.projectionPixels[1].length )
+
             }
         }
         }

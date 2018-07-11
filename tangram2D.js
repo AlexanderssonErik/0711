@@ -100,9 +100,11 @@ let tangram2D = {
 
                             this.timeOutRunning = true;
                             this.timeOut = setTimeout(function() {this.timeOutFunction();}.bind(this), 2000);   
+                            sound.correct(1);                              
                             base.ledSetLeft(globalWorldColor.green);
         
                         }else{
+                            activeGame.fail();
                             base.ledSetBack(globalWorldColor.red);
                             base.ledSetLeft(globalWorldColor.red);
                             base.ledSetFront(globalWorldColor.red);
@@ -118,6 +120,7 @@ let tangram2D = {
 
                     this.timeOutRunning = true;
                     this.timeOut = setTimeout(function() {this.timeOutFunction();}.bind(this), 2000);   
+                    sound.correct(1);
                     base.ledSetLeft(globalWorldColor.green);
 
                 }
@@ -139,9 +142,11 @@ let tangram2D = {
 
                             this.timeOutRunning = true;
                             this.timeOut = setTimeout(function() {this.timeOutFunction();}.bind(this), 2000);   
+                            sound.correct(1);
                             base.ledSetFront(globalWorldColor.green);
         
                         }else{
+                            activeGame.fail();
                             base.ledSetBack(globalWorldColor.red);
                             base.ledSetLeft(globalWorldColor.red);
                             base.ledSetFront(globalWorldColor.red);
@@ -156,6 +161,7 @@ let tangram2D = {
                 }else if(diffAndIntsTmp[0].length == 0 && diffAndIntsTmp[1].length == 0 ){
                     this.timeOutRunning = true;
                     this.timeOut = setTimeout(function() {this.timeOutFunction();}.bind(this), 2000); 
+                    sound.correct(1);
                     base.ledSetFront(globalWorldColor.green);
                 }
 
@@ -176,9 +182,11 @@ let tangram2D = {
 
                             this.timeOutRunning = true;
                             this.timeOut = setTimeout(function() {this.timeOutFunction();}.bind(this), 2000);   
+                            sound.correct(1);
                             base.ledSetRight(globalWorldColor.green);
         
                         }else{
+                            activeGame.fail();
                             base.ledSetBack(globalWorldColor.red);
                             base.ledSetLeft(globalWorldColor.red);
                             base.ledSetFront(globalWorldColor.red);
@@ -193,6 +201,7 @@ let tangram2D = {
                 }else if(diffAndIntsTmp[0].length == 0 && diffAndIntsTmp[1].length == 0 ){
                     this.timeOutRunning = true;
                     this.timeOut = setTimeout(function() {this.timeOutFunction();}.bind(this), 2000);  
+                    sound.correct(1);
                     base.ledSetRight(globalWorldColor.green);
                 }
 
@@ -213,9 +222,11 @@ let tangram2D = {
 
                             this.timeOutRunning = true;
                             this.timeOut = setTimeout(function() {this.timeOutFunction();}.bind(this), 2000);   
+                            sound.correct(1);
                             base.ledSetBack(globalWorldColor.green);
         
                         }else{
+                            activeGame.fail();
                             base.ledSetBack(globalWorldColor.red);
                             base.ledSetLeft(globalWorldColor.red);
                             base.ledSetFront(globalWorldColor.red);
@@ -230,6 +241,7 @@ let tangram2D = {
                 }else if(diffAndIntsTmp[0].length == 0 && diffAndIntsTmp[1].length == 0 ){
                     this.timeOutRunning = true;
                     this.timeOut = setTimeout(function() {this.timeOutFunction();}.bind(this), 2000);  
+                    sound.correct(1);
                     base.ledSetBack(globalWorldColor.green);
                     
                 }
@@ -251,11 +263,13 @@ let tangram2D = {
 
                             this.timeOutRunning = true;
                             this.timeOut = setTimeout(function() {this.timeOutFunction();}.bind(this), 2000);   
+                            sound.correct(1);
                             base.ledSetLeft(globalWorldColor.green);
                             base.ledSetFront(globalWorldColor.green);
                             base.ledSetRight(globalWorldColor.green);
         
                         }else{
+                            activeGame.fail();
                             base.ledSetBack(globalWorldColor.red);
                             base.ledSetLeft(globalWorldColor.red);
                             base.ledSetFront(globalWorldColor.red);
@@ -270,6 +284,7 @@ let tangram2D = {
                 }else if(diffAndIntsTmp[0].length == 0 && diffAndIntsTmp[1].length == 0 ){
                     this.timeOutRunning = true;
                     this.timeOut = setTimeout(function() {this.timeOutFunction();}.bind(this), 2000);  
+                    sound.correct(1);
                     base.ledSetLeft(globalWorldColor.green);
                     base.ledSetFront(globalWorldColor.green);
                     base.ledSetRight(globalWorldColor.green);

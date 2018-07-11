@@ -112,6 +112,7 @@ let colorMatch = {
                     this.timeOutRunning = true;
                     this.timeOut = setTimeout(function() {this.timeOutFunction();}.bind(this), 3000);   
 
+                    activeGame.fail();
                     base.ledSetBack(globalWorldColor.red);
                     base.ledSetLeft(globalWorldColor.red);
                     base.ledSetFront(globalWorldColor.red);

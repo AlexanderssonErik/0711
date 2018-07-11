@@ -28,7 +28,10 @@ let shapeHunter = {
                 }
             }
 
-            if(hitForbidden){                
+            if(hitForbidden){ 
+                
+          
+                
                 if(shapeHunterLevel.noLedOnForbidden()){
                     for(let a = 0; a < world.block.length; a++){
                         algoBlock.setAllLed(world.block[a], 0, false ); 
@@ -71,6 +74,11 @@ let shapeHunter = {
             if(levelPixels[i].color == globalWorldColor.red){               
                 foundPixels++;
             }
+        }
+        if(hitForbidden){
+            activeGame.progression(levelPixels.length , foundPixels, levelPixels.length );
+        }else{
+            activeGame.progression(0 , foundPixels , levelPixels.length );
         }
 
         if(!hitForbidden && foundPixels == levelPixels.length ){

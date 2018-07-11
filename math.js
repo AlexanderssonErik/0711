@@ -162,12 +162,14 @@ let math = {
                         }else{
                             if(mathLevel.numbers[2] < currentNumbers[1]){
                                 algoBlockPixel.setColor(numberPixels[1][2], globalWorldColor.red, true, false, true);
+                                activeGame.fail();
                                 base.ledSetBack(globalWorldColor.red);
                                 base.ledSetLeft(globalWorldColor.red);
                                 base.ledSetFront(globalWorldColor.red);
                                 base.ledSetRight(globalWorldColor.red);
                             }else{
                                 algoBlockPixel.setColor(numberPixels[1][2], globalWorldColor.blue, true, false, true);
+                                activeGame.fail();
                                 base.ledSetBack(globalWorldColor.blue);
                                 base.ledSetLeft(globalWorldColor.blue);
                                 base.ledSetFront(globalWorldColor.blue);
@@ -343,6 +345,7 @@ let math = {
                             if(mathLevel.numbers[mathLevel.secretInput()] < currentNumbers[mathLevel.secretInput()]){
                                 this.numbers[mathLevel.secretInput()*2].showNumber(currentNumbers[mathLevel.secretInput()], globalWorldColor.red);
                                 algoBlockPixel.setColor(numberPixels[mathLevel.secretInput()][2], globalWorldColor.red, true, false, true);
+                                activeGame.fail();
                                 base.ledSetBack(globalWorldColor.red);
                                 base.ledSetLeft(globalWorldColor.red);
                                 base.ledSetFront(globalWorldColor.red);
@@ -350,6 +353,7 @@ let math = {
                             }else{
                                 this.numbers[mathLevel.secretInput()*2].showNumber(currentNumbers[mathLevel.secretInput()], globalWorldColor.blue);
                                 algoBlockPixel.setColor(numberPixels[mathLevel.secretInput()][2], globalWorldColor.blue, true, false, true);
+                                activeGame.fail();
                                 base.ledSetBack(globalWorldColor.blue);
                                 base.ledSetLeft(globalWorldColor.blue);
                                 base.ledSetFront(globalWorldColor.blue);

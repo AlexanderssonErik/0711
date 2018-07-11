@@ -193,6 +193,7 @@ this.currentPlayerScore[1]= 0;
                 this.basePlayerColor(this.currentPlayer);
                 this.state = 0;
 
+                sound.correct(1);
                 base.ledAllFlash(globalWorldColor.green, 0, 2000 );
                 
             }
@@ -211,7 +212,7 @@ this.currentPlayerScore[1]= 0;
 
                     this.textCommand.text = "Player " + ((this.currentPlayer +1)%2  +1) + " - Remember?";
                     this.basePlayerColor((this.currentPlayer +1)%2 );
-
+                    activeGame.fail();
                     base.ledAllFlash(globalWorldColor.red, 2, 300 );
                     this.state = 3;
                 }else{
@@ -221,6 +222,7 @@ this.currentPlayerScore[1]= 0;
                     this.textCommand.text = "Correct Combination";
                 base.ledSetBack(0);
                     this.state = 4;
+                    activeGame.fail();
                     base.ledAllFlash(globalWorldColor.red, 2, 300 );
                 }
             }
@@ -241,6 +243,7 @@ this.currentPlayerScore[1]= 0;
 
                 this.textCommand.text = "Player " + (this.currentPlayer +1)  + " - Build!";
                 this.basePlayerColor(this.currentPlayer);
+                activeGame.progression(0, 1, 1);
                 base.ledAllFlash(globalWorldColor.green, 0, 2000 );
                 this.state = 0;
                 
@@ -261,6 +264,7 @@ this.currentPlayerScore[1]= 0;
                 this.textCommand.text = "Correct Combination";
                 base.ledSetBack(0);
                 this.state = 4;
+                activeGame.fail();
                 base.ledAllFlash(globalWorldColor.red, 2, 300 );
                 
             }

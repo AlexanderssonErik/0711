@@ -236,7 +236,7 @@ let guiGame = {
         }
         //function() {this.ledStartBlink(ms);}.bind(this)
 
-        //this.buttonsGame[0][0].initCallBack(activeGame.setGame(games.guidedBuild), buttonTrigger.up);
+        //this.buttonsGame[0][0].initCallBack(this.clickGame, buttonTrigger.down);
         this.buttonsGame[0][1].initCallBack(function() {activeGame.setGame(games.guidedBuild)}, buttonTrigger.up);
         this.buttonsGame[0][2].initCallBack(function() {activeGame.setGame(games.freeBuild)}, buttonTrigger.up);
         
@@ -330,6 +330,7 @@ let guiGame = {
         if(this.scene.pointerX < canvas.width && this.scene.pointerX > canvas.width - buttonExpandable.size[this.sizeSetting] &&
             this.scene.pointerY > 0  && this.scene.pointerY <  buttonExpandable.size[this.sizeSetting] 
             ){
+                sound.buttonAction();
                 camera.lock();
                 this.buttonsLevel[0][0].down();
                 this.menuLevelActive = true;
@@ -338,9 +339,11 @@ let guiGame = {
         if(this.scene.pointerX > 0 && this.scene.pointerX <  buttonExpandable.size[this.sizeSetting] &&
             this.scene.pointerY > 0 && this.scene.pointerY <   buttonExpandable.size[this.sizeSetting]
             ){
+                sound.buttonAction();
                 camera.lock();
                 this.buttonsGame[0][0].down();
                 this.menuGameActive = true;
+                
             }
 
             

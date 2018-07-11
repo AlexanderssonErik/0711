@@ -42,6 +42,11 @@ let guiSettings = {
         iconPath[4][1] = "./icon/settings_compass_off.svg"
         iconPath[4][2] = "./icon/settings_full_screen.svg"
 
+        iconPath[5] = [];
+        iconPath[5][0] = "./icon/settings_full_screen.svg"
+        iconPath[5][1] = "./icon/settings_compass_off.svg"
+        iconPath[5][2] = "./icon/settings_full_screen.svg"
+
         this.okButton = Object.create(buttonSimple); 
         this.okButton.init(buttonPosition.center,buttonPosition.bottom, iconPathOkButton );
         //this.okButton.initCallBack(this.clickSize, buttonTrigger.down);
@@ -138,6 +143,9 @@ let guiSettings = {
 
         this.buttons[4][1].initCallBack(this.clickFullScreenOff, buttonTrigger.up);
         this.buttons[4][2].initCallBack(this.clickFullScreenOn, buttonTrigger.up);
+
+        this.buttons[5][1].initCallBack(this.clickSoundOff, buttonTrigger.up);
+        this.buttons[5][2].initCallBack(this.clickSoundOn, buttonTrigger.up);
         this.buttons[0][0].show();
 
         this.enabled = true;
@@ -145,6 +153,15 @@ let guiSettings = {
     click : function(){
         console.log("click");
     },
+    clickSoundOff: function(){
+        sound.off();
+        console.log("sound off");
+    },
+    clickSoundOn: function(){
+        sound.on();
+        console.log("sound on");
+    },
+
     clickSize : function(){
         guiSettings.sizeSetting +=1;
         guiSettings.sizeSetting %=3;
@@ -253,6 +270,7 @@ let guiSettings = {
         if(this.scene.pointerX > 0 && this.scene.pointerX <  buttonExpandable.size[this.sizeSetting] &&
             this.scene.pointerY < canvas.height && this.scene.pointerY >  canvas.height - buttonExpandable.size[this.sizeSetting]
             ){
+                sound.buttonAction();
                 camera.lock();
                 this.buttons[0][0].down();
                 this.menuActive = true;

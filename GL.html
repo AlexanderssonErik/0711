@@ -70,6 +70,9 @@
     <script src="freeBuild.js"></script>
     <script src="freeBuildLevel.js"></script>
 
+    <script src="sound.js"></script>
+
+
     <style>
 
 html,body, can {
@@ -136,6 +139,7 @@ base.ledSetLeft(globalWorldColor.cyan);
         biloScene.clearColor  = new BABYLON.Color3(1, 1, 1);
         biloScene.clearColor  = new BABYLON.Color3(0.7, 0.8, 0.9);
 
+sound.init(biloScene);
 
 world.init(biloScene);
 game.init(biloScene);

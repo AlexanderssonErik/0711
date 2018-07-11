@@ -111,6 +111,7 @@ let buttonSimple = {
         this.elipse.alpha = 0.5;
 
         if(this.callBackPointerDownUpMove == buttonTrigger.down){
+            sound.buttonAction();
             this.callBackFunction();  
            
         }
@@ -121,6 +122,7 @@ let buttonSimple = {
         this.elipse.alpha = 0.3;
 
         if(this.callBackPointerDownUpMove == buttonTrigger.up){
+            sound.buttonAction();
             this.callBackFunction();  
         }
 
@@ -267,6 +269,7 @@ let buttonExpandable = {
         }
 
         if(this.callBackPointerDownUpMove == buttonTrigger.down){
+            sound.buttonAction();
             this.callBackFunction();  
         }
         
@@ -276,6 +279,7 @@ let buttonExpandable = {
        // console.log("this.callBackPointerDownUpMove: " + this.callBackPointerDownUpMove);
        if(this.elipse.isVisible == true){
         if(this.callBackPointerDownUpMove == buttonTrigger.up){
+            sound.buttonAction();
             this.callBackFunction();  
         }
         }
